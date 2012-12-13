@@ -331,7 +331,7 @@ static EAGLView *view = 0;
         glBindFramebuffer(GL_FRAMEBUFFER, [renderer_ msaaFrameBuffer]);    
 }
 
-- (NSArray *)selectionRectsForRange:(UITextRange *)range NS_AVAILABLE_IOS(6_0)
+- (NSArray *)selectionRectsForRange:(UITextRange *)range
 {
     return nil;
 }
