@@ -41,6 +41,7 @@ public:
     
 private:
     b2World* world;
+    b2Draw* m_debugDraw;
     cocos2d::CCTexture2D* m_pSpriteTexture; // weak ref
 };
 
