@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9130C42167AF91500690209 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C40167AF91500690209 /* GLES-Render.cpp */; };
+		A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C44167AFB7500690209 /* Box2DHelper.cpp */; };
 		A9D2C8F91679CA7300B46206 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8F81679CA7300B46206 /* QuartzCore.framework */; };
 		A9D2C8FB1679CA7300B46206 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8FA1679CA7300B46206 /* OpenGLES.framework */; };
 		A9D2C8FD1679CA7300B46206 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8FC1679CA7300B46206 /* OpenAL.framework */; };
@@ -255,6 +256,8 @@
 /* Begin PBXFileReference section */
 		A9130C40167AF91500690209 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
 		A9130C41167AF91500690209 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "Classes/GLES-Render.h"; sourceTree = "<group>"; };
+		A9130C44167AFB7500690209 /* Box2DHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Box2DHelper.cpp; sourceTree = "<group>"; };
+		A9130C45167AFB7500690209 /* Box2DHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DHelper.h; sourceTree = "<group>"; };
 		A9D2C8F41679CA7300B46206 /* TinyWingsX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyWingsX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D2C8F81679CA7300B46206 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A9D2C8FA1679CA7300B46206 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1821,6 +1824,8 @@
 				A9D2CC261679CA7800B46206 /* AppDelegate.cpp */,
 				A9D2CC281679CA7800B46206 /* HelloWorldScene.h */,
 				A9D2CC291679CA7800B46206 /* HelloWorldScene.cpp */,
+				A9130C44167AFB7500690209 /* Box2DHelper.cpp */,
+				A9130C45167AFB7500690209 /* Box2DHelper.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2119,6 +2124,7 @@
 				A9D2CC271679CA7800B46206 /* AppDelegate.cpp in Sources */,
 				A9D2CC2A1679CA7800B46206 /* HelloWorldScene.cpp in Sources */,
 				A9130C42167AF91500690209 /* GLES-Render.cpp in Sources */,
+				A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
