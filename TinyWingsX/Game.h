@@ -17,6 +17,9 @@ class Game : public cocos2d::CCLayer
 public:
     Game();
     virtual ~Game();
+    CREATE_FUNC(Game);
+    bool init();
+    virtual void update(float dt);
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     static cocos2d::CCScene* scene();
     
