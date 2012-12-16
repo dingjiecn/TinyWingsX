@@ -7,6 +7,7 @@
 //
 
 #include "Game.h"
+#include "Sky.h"
 
 using namespace cocos2d;
 
@@ -24,6 +25,8 @@ bool Game::init()
 {
     CCLayer::init();
     this->scheduleUpdate();
+    this->setSky(Sky::create());
+    this->addChild(m_pSky);
     return true;
 }
 
@@ -42,5 +45,7 @@ cocos2d::CCScene* Game::scene()
 
 void Game::update(float dt)
 {
-    CCLOG("%f", dt);
+    static float fSkyOffsetX = 0;
+    fSkyOffsetX += dt * 100.0f;
+    //m_pSky->setOffsetX(fSkyOffsetX);
 }

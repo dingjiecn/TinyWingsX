@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C06EC26167CB2BB000D2570 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6C06EC25167CB2BB000D2570 /* Sky.cpp */; };
+		6C06EC38167CB620000D2570 /* hero-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC32167CB620000D2570 /* hero-hd.png */; };
+		6C06EC39167CB620000D2570 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC33167CB620000D2570 /* hero.png */; };
+		6C06EC3A167CB620000D2570 /* noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC34167CB620000D2570 /* noise-hd.png */; };
+		6C06EC3B167CB620000D2570 /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC35167CB620000D2570 /* noise.png */; };
+		6C06EC3C167CB620000D2570 /* resetButton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC36167CB620000D2570 /* resetButton-hd.png */; };
+		6C06EC3D167CB620000D2570 /* resetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06EC37167CB620000D2570 /* resetButton.png */; };
+		6C12955F167CBB4B00048704 /* bj02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C12955E167CBB4B00048704 /* bj02.jpg */; };
 		A9130C42167AF91500690209 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C40167AF91500690209 /* GLES-Render.cpp */; };
 		A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C44167AFB7500690209 /* Box2DHelper.cpp */; };
 		A9130C49167B0E6B00690209 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C47167B0E6A00690209 /* Game.cpp */; };
@@ -255,6 +263,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C06EC25167CB2BB000D2570 /* Sky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sky.cpp; sourceTree = "<group>"; };
+		6C06EC28167CB2CA000D2570 /* Sky.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Sky.h; sourceTree = "<group>"; };
+		6C06EC32167CB620000D2570 /* hero-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero-hd.png"; sourceTree = "<group>"; };
+		6C06EC33167CB620000D2570 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
+		6C06EC34167CB620000D2570 /* noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise-hd.png"; sourceTree = "<group>"; };
+		6C06EC35167CB620000D2570 /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
+		6C06EC36167CB620000D2570 /* resetButton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "resetButton-hd.png"; sourceTree = "<group>"; };
+		6C06EC37167CB620000D2570 /* resetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resetButton.png; sourceTree = "<group>"; };
+		6C12955E167CBB4B00048704 /* bj02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bj02.jpg; sourceTree = "<group>"; };
 		A9130C40167AF91500690209 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
 		A9130C41167AF91500690209 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		A9130C44167AFB7500690209 /* Box2DHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Box2DHelper.cpp; sourceTree = "<group>"; };
@@ -805,6 +822,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C06EC31167CB620000D2570 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6C12955E167CBB4B00048704 /* bj02.jpg */,
+				6C06EC32167CB620000D2570 /* hero-hd.png */,
+				6C06EC33167CB620000D2570 /* hero.png */,
+				6C06EC34167CB620000D2570 /* noise-hd.png */,
+				6C06EC35167CB620000D2570 /* noise.png */,
+				6C06EC36167CB620000D2570 /* resetButton-hd.png */,
+				6C06EC37167CB620000D2570 /* resetButton.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
 		A9D2C8E91679CA7200B46206 = {
 			isa = PBXGroup;
 			children = (
@@ -853,6 +885,7 @@
 		A9D2C9091679CA7300B46206 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C06EC31167CB620000D2570 /* Images */,
 				A9D2C90A1679CA7300B46206 /* CloseNormal.png */,
 				A9D2C90C1679CA7300B46206 /* CloseSelected.png */,
 				A9D2C90E1679CA7300B46206 /* Default.png */,
@@ -1821,16 +1854,18 @@
 		A9D2CC241679CA7800B46206 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A9130C40167AF91500690209 /* GLES-Render.cpp */,
 				A9130C41167AF91500690209 /* GLES-Render.h */,
+				A9130C40167AF91500690209 /* GLES-Render.cpp */,
 				A9D2CC251679CA7800B46206 /* AppDelegate.h */,
 				A9D2CC261679CA7800B46206 /* AppDelegate.cpp */,
 				A9D2CC281679CA7800B46206 /* HelloWorldScene.h */,
 				A9D2CC291679CA7800B46206 /* HelloWorldScene.cpp */,
-				A9130C44167AFB7500690209 /* Box2DHelper.cpp */,
 				A9130C45167AFB7500690209 /* Box2DHelper.h */,
-				A9130C47167B0E6A00690209 /* Game.cpp */,
+				A9130C44167AFB7500690209 /* Box2DHelper.cpp */,
 				A9130C48167B0E6B00690209 /* Game.h */,
+				A9130C47167B0E6A00690209 /* Game.cpp */,
+				6C06EC28167CB2CA000D2570 /* Sky.h */,
+				6C06EC25167CB2BB000D2570 /* Sky.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1899,6 +1934,13 @@
 				A9D2C9B11679CA7400B46206 /* ChangeLog in Resources */,
 				A9D2CC2C1679CA7800B46206 /* blocks.png in Resources */,
 				A9D2CC331679CAE100B46206 /* Default-568h@2x.png in Resources */,
+				6C06EC38167CB620000D2570 /* hero-hd.png in Resources */,
+				6C06EC39167CB620000D2570 /* hero.png in Resources */,
+				6C06EC3A167CB620000D2570 /* noise-hd.png in Resources */,
+				6C06EC3B167CB620000D2570 /* noise.png in Resources */,
+				6C06EC3C167CB620000D2570 /* resetButton-hd.png in Resources */,
+				6C06EC3D167CB620000D2570 /* resetButton.png in Resources */,
+				6C12955F167CBB4B00048704 /* bj02.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2131,6 +2173,7 @@
 				A9130C42167AF91500690209 /* GLES-Render.cpp in Sources */,
 				A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */,
 				A9130C49167B0E6B00690209 /* Game.cpp in Sources */,
+				6C06EC26167CB2BB000D2570 /* Sky.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

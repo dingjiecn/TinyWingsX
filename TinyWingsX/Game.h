@@ -12,6 +12,8 @@
 #include <iostream>
 #include "cocos2d.h"
 
+class Sky;
+
 class Game : public cocos2d::CCLayer
 {
 public:
@@ -22,6 +24,8 @@ public:
     virtual void update(float dt);
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     static cocos2d::CCScene* scene();
+private:
+    CC_SYNTHESIZE(Sky*, m_pSky, Sky);
     
 };
 
