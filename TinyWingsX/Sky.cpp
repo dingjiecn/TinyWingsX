@@ -7,10 +7,34 @@
 //
 
 #include <iostream>
-#include <OpenGLES/ES1/gl.h>
 #include "Sky.h"
 
 using namespace cocos2d;
+
+static bool s_bInitialized = false;
+static CCGLProgram* s_pShader = NULL;
+static int s_nColorLocation = -1;
+static ccColor4F s_tColor = {1.0f,1.0f,1.0f,1.0f};
+static int s_nPointSizeLocation = -1;
+static GLfloat s_fPointSize = 1.0f;
+
+static void lazy_init( void )
+{
+    if( ! s_bInitialized ) {
+        
+        //
+        // Position and 1 color passed as a uniform (to simulate glColor4ub )
+        //
+        s_pShader = CCShaderCache::sharedShaderCache()->programForKey(kCCShader_Position_uColor);
+        
+        s_nColorLocation = glGetUniformLocation( s_pShader->getProgram(), "u_color");
+        CHECK_GL_ERROR_DEBUG();
+        s_nPointSizeLocation = glGetUniformLocation( s_pShader->getProgram(), "u_pointSize");
+        CHECK_GL_ERROR_DEBUG();
+        
+        s_bInitialized = true;
+    }
+}
 
 Sky::Sky():m_fScale(1.0f), m_fOffsetX(0.0f), m_pSprite(NULL), m_nTextureSize(512)
 {
@@ -43,9 +67,8 @@ CCTexture2D* Sky::generateTexture()
     pRenderTexture->beginWithClear(0.55f, 0.80f, 0.86f, 1.0f);
     
     //gradient
-    float alpha = 0.3f;
-    glDisable(GL_TEXTURE_2D);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    float alpha = 1.0f;
+    glDisable(GL_TEXTURE_2D);//glDisableClientState(GL_TEXTURE_COORD_ARRAY);
     ccVertex2F vertices[4];
     ccColor4F colors[4];
     vertices[0] = (ccVertex2F){0, 0};                               colors[0] = (ccColor4F){1, 1, 1, 0};
@@ -53,13 +76,21 @@ CCTexture2D* Sky::generateTexture()
     vertices[2] = (ccVertex2F){0, m_nTextureSize};                  colors[2] = (ccColor4F){1, 1, 1, alpha};
     vertices[3] = (ccVertex2F){m_nTextureSize, m_nTextureSize};     colors[3] = (ccColor4F){1, 1, 1, alpha};
     
-    glVertexPointer(2, GL_FLOAT, 0, vertices);
-    glColorPointer(4, GL_FLOAT, 0, colors);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)4);
+    lazy_init();
     
-    glEnable(GL_TEXTURE_2D);
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    s_pShader->use();
+    s_pShader->setUniformForModelViewProjectionMatrix();
+    
+    ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position | kCCVertexAttribFlag_Color );
+    ccGLBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, 0, vertices);
+    glVertexAttribPointer(kCCVertexAttrib_Color, 4, GL_FLOAT, GL_FALSE, 0, colors);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    CC_INCREMENT_GL_DRAWS(1);
+    //ccDrawSolidRect(ccp(0, 0), ccp(m_nTextureSize, m_nTextureSize), (ccColor4F){1, 0, 1, 1});
+    
+    
+    glEnable(GL_TEXTURE_2D);//glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     
     //noise
     CCSprite* pSprite = CCSprite::create("blocks.png");
