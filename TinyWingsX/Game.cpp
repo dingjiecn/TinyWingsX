@@ -47,5 +47,19 @@ void Game::update(float dt)
 {
     static float fSkyOffsetX = 0;
     fSkyOffsetX += dt * 100.0f;
-    //m_pSky->setOffsetX(fSkyOffsetX);
+    m_pSky->setOffsetX(fSkyOffsetX);
+    
+    CCSize sz = CCDirector::sharedDirector()->getWinSize();
+    float minScale = sz.height / 512.0f;
+    
+    static float fSkyScale = 1.0f;
+    static float f = 0.005f;
+    if(fSkyScale >= 1.0f || fSkyScale <= minScale)
+    {
+        f = -f;
+    }
+
+    fSkyScale += f;
+    
+    m_pSky->setScale(fSkyScale);
 }
