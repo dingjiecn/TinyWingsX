@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <OpenGLES/ES1/gl.h>
 #include "Sky.h"
 
 using namespace cocos2d;
@@ -39,14 +40,35 @@ void Sky::initSprite()
 CCTexture2D* Sky::generateTexture()
 {
     CCRenderTexture* pRenderTexture = CCRenderTexture::create(m_nTextureSize, m_nTextureSize);
-    	
     pRenderTexture->beginWithClear(0.55f, 0.80f, 0.86f, 1.0f);
+    
+    //gradient
+    float alpha = 0.3f;
+    glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    ccVertex2F vertices[4];
+    ccColor4F colors[4];
+    vertices[0] = (ccVertex2F){0, 0};                               colors[0] = (ccColor4F){1, 1, 1, 0};
+    vertices[1] = (ccVertex2F){m_nTextureSize, 0};                  colors[1] = (ccColor4F){1, 1, 1, 0};
+    vertices[2] = (ccVertex2F){0, m_nTextureSize};                  colors[2] = (ccColor4F){1, 1, 1, alpha};
+    vertices[3] = (ccVertex2F){m_nTextureSize, m_nTextureSize};     colors[3] = (ccColor4F){1, 1, 1, alpha};
+    
+    glVertexPointer(2, GL_FLOAT, 0, vertices);
+    glColorPointer(4, GL_FLOAT, 0, colors);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)4);
+    
+    glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    
+    //noise
     CCSprite* pSprite = CCSprite::create("blocks.png");
     pSprite->setPosition(ccp(m_nTextureSize / 2, m_nTextureSize / 2));
     pSprite->setScale(1.0f);
     pSprite->setBlendFunc((ccBlendFunc){GL_DST_COLOR, GL_ZERO});
     pSprite->visit();
     pRenderTexture->end();
+    
     CCTexture2D* pTex = pRenderTexture->getSprite()->getTexture();
     ccTexParams params = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
     pTex->setTexParameters(&params);
