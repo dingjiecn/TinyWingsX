@@ -8,6 +8,7 @@
 
 #include "Game.h"
 #include "Sky.h"
+#include "Terrain.h"
 
 using namespace cocos2d;
 
@@ -27,6 +28,10 @@ bool Game::init()
     this->scheduleUpdate();
     this->setSky(Sky::create());
     this->addChild(m_pSky);
+    
+    this->setTerrain(Terrain::create());
+    this->addChild(m_pTerrain);
+    
     return true;
 }
 
@@ -60,6 +65,10 @@ void Game::update(float dt)
     }
 
     fSkyScale += f;
-    
     m_pSky->setScale(fSkyScale);
+    
+    //static float fTerrainScale = 1.0f;
+    //fTerrainScale -= 0.001f;
+    //m_pTerrain->setScale(fTerrainScale);
+
 }

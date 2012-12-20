@@ -54,12 +54,13 @@ float Terrain::getOffsetX()
 void Terrain::generateHillKeyPoints()
 {
     m_nHillKeyPoints = 0;
-    float x, y, dx, dy, ny;
+    float x, y, dx, dy;
 
     m_aHillKeyPoints[0] = (ccVertex2F){-m_fScreenWidth/4, m_fScreenHeight*3/4};
     m_aHillKeyPoints[1] = (ccVertex2F){0, m_fScreenHeight/2};
     
-    int mindx = 160, rangedx = 80;
+    //int mindx = 160, rangedx = 80;
+    int mindx = 3, rangedx = 5;
     int mindy = 60, rangedy = 60;
     float maxH = m_fScreenHeight;
     float minH = 20;
@@ -91,11 +92,16 @@ void Terrain::generateHillKeyPoints()
 
 void Terrain::draw()
 {
-//    for(int i = 0; i < kMaxHillKeyPoints; i++)
-//    {
-//        CCPoint pt1 = CCPoint(
-//        ccDrawLine(const cocos2d::CCPoint &origin, const cocos2d::CCPoint &destination);
-//    }
+    ccDrawColor4B(0, 0, 0, 255);
+    CCPoint *vertices = new CCPoint[kMaxHillKeyPoints];
+    for(int i = 0; i < kMaxHillKeyPoints - 1; i++)
+    {
+        ccVertex2F pt = m_aHillKeyPoints[i];
+        CCPoint pt1 = CCPoint(pt.x, pt.y);
+        pt = m_aHillKeyPoints[i + 1];
+        CCPoint pt2 = CCPoint(pt.x, pt.y);
+        ccDrawLine(pt1, pt2);
+    }
 }
 
 void Terrain::generateBorderVertices()

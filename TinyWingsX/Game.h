@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 
 class Sky;
+class Terrain;
 
 class Game : public cocos2d::CCLayer
 {
@@ -26,6 +27,7 @@ public:
     static cocos2d::CCScene* scene();
 private:
     CC_SYNTHESIZE(Sky*, m_pSky, Sky);
+    CC_SYNTHESIZE(Terrain*, m_pTerrain, Terrain);
     
 };
 
