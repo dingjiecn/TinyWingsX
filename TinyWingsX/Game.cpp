@@ -50,7 +50,7 @@ void Game::update(float dt)
     m_pSky->setOffsetX(fSkyOffsetX);
     
     CCSize sz = CCDirector::sharedDirector()->getWinSize();
-    float minScale = sz.height / 512.0f;
+    float minScale = sz.height / 1024.0f;
     
     static float fSkyScale = 1.0f;
     static float f = 0.005f;

@@ -18,6 +18,7 @@
 		A9130C42167AF91500690209 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C40167AF91500690209 /* GLES-Render.cpp */; };
 		A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C44167AFB7500690209 /* Box2DHelper.cpp */; };
 		A9130C49167B0E6B00690209 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C47167B0E6A00690209 /* Game.cpp */; };
+		A9130C841682C36A00690209 /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9130C821682C36900690209 /* Terrain.cpp */; };
 		A9D2C8F91679CA7300B46206 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8F81679CA7300B46206 /* QuartzCore.framework */; };
 		A9D2C8FB1679CA7300B46206 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8FA1679CA7300B46206 /* OpenGLES.framework */; };
 		A9D2C8FD1679CA7300B46206 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D2C8FC1679CA7300B46206 /* OpenAL.framework */; };
@@ -278,6 +279,8 @@
 		A9130C45167AFB7500690209 /* Box2DHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DHelper.h; sourceTree = "<group>"; };
 		A9130C47167B0E6A00690209 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		A9130C48167B0E6B00690209 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		A9130C821682C36900690209 /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
+		A9130C831682C36900690209 /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
 		A9D2C8F41679CA7300B46206 /* TinyWingsX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyWingsX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D2C8F81679CA7300B46206 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A9D2C8FA1679CA7300B46206 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -873,11 +876,11 @@
 		A9D2C9081679CA7300B46206 /* TinyWingsX */ = {
 			isa = PBXGroup;
 			children = (
+				A9D2CC221679CA7800B46206 /* Supporting Files */,
 				A9D2C9091679CA7300B46206 /* Resources */,
 				A9D2C9211679CA7300B46206 /* ios */,
 				A9D2C92A1679CA7300B46206 /* libs */,
 				A9D2CC241679CA7800B46206 /* Classes */,
-				A9D2CC221679CA7800B46206 /* Supporting Files */,
 			);
 			path = TinyWingsX;
 			sourceTree = "<group>";
@@ -1866,6 +1869,8 @@
 				A9130C47167B0E6A00690209 /* Game.cpp */,
 				6C06EC28167CB2CA000D2570 /* Sky.h */,
 				6C06EC25167CB2BB000D2570 /* Sky.cpp */,
+				A9130C831682C36900690209 /* Terrain.h */,
+				A9130C821682C36900690209 /* Terrain.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2174,6 +2179,7 @@
 				A9130C46167AFB7500690209 /* Box2DHelper.cpp in Sources */,
 				A9130C49167B0E6B00690209 /* Game.cpp in Sources */,
 				6C06EC26167CB2BB000D2570 /* Sky.cpp in Sources */,
+				A9130C841682C36A00690209 /* Terrain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

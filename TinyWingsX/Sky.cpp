@@ -6,19 +6,12 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-//    ccVertex2F vertices[4];
-//    ccColor4F colors[4];
-//    vertices[0] = (ccVertex2F){0, 0};                               colors[0] = (ccColor4F){1, 1, 1, 0};
-//    vertices[1] = (ccVertex2F){m_nTextureSize, 0};                  colors[1] = (ccColor4F){1, 1, 1, 0};
-//    vertices[2] = (ccVertex2F){0, m_nTextureSize};                  colors[2] = (ccColor4F){1, 1, 1, alpha};
-//    vertices[3] = (ccVertex2F){m_nTextureSize, m_nTextureSize};     colors[3] = (ccColor4F){1, 1, 1, alpha};
-
 #include <iostream>
 #include "Sky.h"
 
 using namespace cocos2d;
 
-Sky::Sky():m_fScale(1.0f), m_fOffsetX(0.0f), m_pSprite(NULL), m_nTextureSize(512), m_fSkyWidth(0), m_fSkyHeight(0)
+Sky::Sky():m_fScale(1.0f), m_fOffsetX(0.0f), m_pSprite(NULL), m_nTextureSize(1024), m_fSkyWidth(0), m_fSkyHeight(0)
 {
     CCLog("contruct sky");
 }
