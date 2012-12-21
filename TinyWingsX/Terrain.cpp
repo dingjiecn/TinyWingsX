@@ -44,6 +44,7 @@ void Terrain::setOffsetX(float var)
         return;
     
     m_fOffsetX = var;
+    this->setPosition(ccp(m_fScreenWidth / 8 - m_fOffsetX * this->getScale(), 0));
 }
 
 float Terrain::getOffsetX()
@@ -143,7 +144,6 @@ void Terrain::generateBorderVertices()
             v0.y = yMid + ySub * cosf(j * da);            
             m_aBorderVertices[m_nBorderVertices++] = v0;
         }
-        
     }
 }
 
