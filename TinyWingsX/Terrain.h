@@ -31,12 +31,13 @@ private:
     int m_nTextureSize;
     int m_nHillKeyPoints;
     int m_nHillVertices;
+    int m_nBorderVertices;
     int m_nFromkeyPoint;
     int m_nToKeyPoint;
     cocos2d::ccVertex2F m_aHillKeyPoints[kMaxHillKeyPoints];
-    cocos2d::ccVertex2F m_aHillVertices[kMaxHillVertices];      //long curve
+    cocos2d::ccVertex2F m_aHillVertices[kMaxHillVertices];      
     cocos2d::ccVertex2F m_aHillTexCoords[kMaxHillVertices];
-    cocos2d::ccVertex2F m_aBorderVertices[kMaxBorderVertices];
+    cocos2d::ccVertex2F m_aBorderVertices[kMaxBorderVertices];  //long curve
     bool init();
     void generateHillKeyPoints();
     void generateBorderVertices();

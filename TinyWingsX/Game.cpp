@@ -31,7 +31,7 @@ bool Game::init()
     
     this->setTerrain(Terrain::create());
     this->addChild(m_pTerrain);
-    
+    m_pTerrain->setScale(0.5f);
     return true;
 }
 
@@ -52,7 +52,7 @@ void Game::update(float dt)
 {
     static float fSkyOffsetX = 0;
     fSkyOffsetX += dt * 100.0f;
-    m_pSky->setOffsetX(fSkyOffsetX);
+    //m_pSky->setOffsetX(fSkyOffsetX);
     
     CCSize sz = CCDirector::sharedDirector()->getWinSize();
     float minScale = sz.height / 1024.0f;
@@ -65,7 +65,7 @@ void Game::update(float dt)
     }
 
     fSkyScale += f;
-    m_pSky->setScale(fSkyScale);
+    //m_pSky->setScale(fSkyScale);
     
     //static float fTerrainScale = 1.0f;
     //fTerrainScale -= 0.001f;
