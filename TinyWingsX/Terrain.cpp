@@ -45,6 +45,7 @@ void Terrain::setOffsetX(float var)
     
     m_fOffsetX = var;
     this->setPosition(ccp(m_fScreenWidth / 8 - m_fOffsetX * this->getScale(), 0));
+    this->resetRenderHill();
 }
 
 float Terrain::getOffsetX()
@@ -121,6 +122,11 @@ void Terrain::draw()
     }
     delete []vertices;
 
+}
+
+void Terrain::resetRenderHill()
+{
+    
 }
 
 void Terrain::generateBorderVertices()

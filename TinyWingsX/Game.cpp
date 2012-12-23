@@ -51,7 +51,7 @@ cocos2d::CCScene* Game::scene()
 void Game::update(float dt)
 {
     static float fSkyOffsetX = 0;
-    fSkyOffsetX += dt * 100.0f;
+    fSkyOffsetX += dt * 500.0f;
     //m_pSky->setOffsetX(fSkyOffsetX);
     
     CCSize sz = CCDirector::sharedDirector()->getWinSize();
@@ -70,5 +70,8 @@ void Game::update(float dt)
     //static float fTerrainScale = 1.0f;
     //fTerrainScale -= 0.001f;
     //m_pTerrain->setScale(fTerrainScale);
+    
+    
+    m_pTerrain->setOffsetX(fSkyOffsetX);
 
 }

@@ -41,6 +41,7 @@ private:
     bool init();
     void generateHillKeyPoints();
     void generateBorderVertices();
+    void resetRenderHill();
     virtual void draw();
 
 };
